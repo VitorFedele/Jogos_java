@@ -1,3 +1,15 @@
+
+
+//ARRUMAR TUDO!
+//arrumar classe app e refazer "cabum" de forma com que fique novamente usavel
+
+
+
+
+
+
+
+
 package jogodamina;
 
 public class Cabum {
@@ -28,10 +40,10 @@ public class Cabum {
         }while(!Final);
 
         if(board.ganhou()){
-        System.out.println("tinha uma mina ai kk noob ! começa dnv otario kkkkk");
+        System.out.println("tinha uma bomba aikkkkkkkkkkkkkk noob! começa de novo kkkkk");
         board.exibeMinas();
     } else {
-        System.out.println("consegiu seu inutil ! nao fez mais que sua obrigação em"+rodada+ "rodada");
+        System.out.println("consegiu seu horrivel! nao fez mais que sua obrigação em " +rodada+ " rodada");
         board.exibeMinas();
         }
 
