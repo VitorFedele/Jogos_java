@@ -19,8 +19,8 @@ import javax.swing.Timer;
 public class SnakeGame extends JFrame implements ActionListener, KeyListener{
 
 	List<Point> snakePoints = new ArrayList<Point>();
-	final static int width=550, height = 550, boxSize=7;
-	static int direction =420;
+	final static int width=420, height = 450, boxSize=7;
+	static int direction =480;
  
 	final static int LEFT = 1, RIGHT=2, TOP = 3, BOTTOM = 4;
 	Timer timer;
@@ -28,8 +28,8 @@ public class SnakeGame extends JFrame implements ActionListener, KeyListener{
 	
 	public SnakeGame(){
 		addKeyListener(this);
-		timer = new Timer(50, this);
-		timer.setInitialDelay(20);
+		timer = new Timer(45, this);
+		timer.setInitialDelay(30);
 		timer.start();
 		final Point point = new Point((width / boxSize) / 2, (height / boxSize) / 2);
 		snakePoints.add(point);
@@ -45,7 +45,7 @@ public class SnakeGame extends JFrame implements ActionListener, KeyListener{
 		drawFood(graficos2D);
 	}
 
-	private void drawSnake(final Graphics2D graficos2D) {
+		private void drawSnake(final Graphics2D graficos2D) {
 		graficos2D.setColor(Color.GREEN);
 		for (final Point pt : snakePoints) {
 			graficos2D.fillRect(pt.x * boxSize, pt.y * boxSize, boxSize, boxSize);
@@ -69,9 +69,8 @@ public class SnakeGame extends JFrame implements ActionListener, KeyListener{
 		moveSnake();
 	}
 	
-	boolean getselfcollision(){
+	public boolean getselfcollision(){
 		return true;
-		
 	}
 	private void moveSnake() {
 		final Point head = snakePoints.get(0);
@@ -132,7 +131,7 @@ public class SnakeGame extends JFrame implements ActionListener, KeyListener{
 
 	private void getNewFoodLocation() {
 		final Random rand = new Random();
-		final int delta = boxSize * 2;
+		final int delta = boxSize * 1;
 		food.setLocation(rand.nextInt(width / boxSize - 2 * delta) + delta,
 				rand.nextInt(height / boxSize - 2 * delta) + delta);
 
